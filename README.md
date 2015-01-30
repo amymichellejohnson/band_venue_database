@@ -50,7 +50,7 @@ This app was created to practice creating databases with active-record, to work 
 
 Known Bugs
 ----------
-No known errors.
+If no venues are checked, the user will get the error screen.
 
 License
 -------
