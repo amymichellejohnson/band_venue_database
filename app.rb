@@ -59,13 +59,6 @@ patch("/bands/add_venues/:id") do
   erb(:band_add_venue)
 end
 
-
-# get("/bands/venues/delete/:id") do
-#   params.fetch('id')
-#
-#
-#end
-
 post("/venues") do
   name = params.fetch("name")
   Venue.create({:name => name})

@@ -15,6 +15,6 @@ describe(Band) do
   it("alphebetizes the list of bands") do
     band1 = Band.create({:name => "Janis Joplin"})
     band2 = Band.create({:name => "Beatles"})
-    expect(Band.alphabetical()).to(eq([venue2, venue1]))
+    expect(Band.alphabetical()).to(eq([band2, band1]))
   end
 end

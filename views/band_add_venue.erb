@@ -5,29 +5,32 @@
 <% if @venues.any?() %>
 <form action="/bands/add_venues/<%= @band.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-
   <% @venues.alphabetical.each() do |venue| %>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
-    </label>
-  </div>
-  <% end %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" required name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
+      </label>
+    </div>
+    <% end %>
 
   <button type="submit">Add venues</button>
 </form>
 <% end %>
 
 <br>
+
 <h3>Venues played:</h3>
+
 <% if @band.venues.any?() %>
-<% @band.venues.each() do |venue| %>
-<ul>
-  <li><%= venue.name() %> <a href="/bands/venue/delete/<%= venue.id() %>"><button type="submit" class="btn btn-xs btn-danger">Delete</button></a></li>
-</ul>
-<% end %>
+  <% @band.venues.each() do |venue| %>
+    <ul>
+      <li><%= venue.name() %> </li>
+    </ul>
+  <% end %>
 <% else %>
 <p>No venues are listed yet!</p>
-<% end %>
+  <% end %>
+
 <br>
+
 <a href="/">Return to Main page</a>
