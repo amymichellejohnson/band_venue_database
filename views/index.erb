@@ -10,7 +10,7 @@
 
 <% if @bands.any?() %>
   <p>Click on a band to <b>see/add</b> venues played or to <b>edit</b> band's name:</p>
-  <% @bands.each() do |band| %>
+  <% @bands.alphabetical.each() do |band| %>
     <ul>
       <li><a href="bands/<%= band.id() %>"><%=band.name()%></a></li>
     </ul>
@@ -29,7 +29,7 @@
 </form>
 
 <% if @venues.any?() %>
-<% @venues.each() do |venue| %>
+<% @venues.alphabetical.each() do |venue| %>
 <ul>
   <li><%=venue.name()%> <a href="/venues/delete/<%= venue.id() %>"><button type="submit" class="btn btn-xs btn-danger">Delete</button></a></li>
 </ul>

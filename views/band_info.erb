@@ -2,7 +2,7 @@
 
 <h3>Venues played:</h3>
 <% if @band.venues.any?() %>
-  <% @band.venues.each() do |venue| %>
+  <% @band.venues.alphabetical.each() do |venue| %>
     <ul>
       <li><%= venue.name() %></li>
     </ul>

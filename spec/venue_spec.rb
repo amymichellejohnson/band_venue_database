@@ -9,7 +9,14 @@ describe(Venue) do
   end
 
   it("capitalizes each word of the venue's name") do
-    venue= Venue.create({:name=> "doug fir"})
+    venue= Venue.create({:name => "doug fir"})
     expect(venue.name()).to(eq("Doug Fir"))
   end
+
+  it("alphebetizes the list of venues") do
+    venue1 = Venue.create({:name => "Doug Fir"})
+    venue2 = Venue.create({:name => "Aladdin Theatre"})
+    expect(Venue.alphabetical()).to(eq([venue2, venue1]))
+  end
+
 end

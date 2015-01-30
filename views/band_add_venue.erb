@@ -6,7 +6,7 @@
 <form action="/bands/add_venues/<%= @band.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
 
-  <% @venues.each() do |venue| %>
+  <% @venues.alphabetical.each() do |venue| %>
   <div class="checkbox">
     <label>
       <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>

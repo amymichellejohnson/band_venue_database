@@ -12,4 +12,9 @@ describe(Band) do
     band = Band.create({:name => "the beatles"})
     expect(band.name()).to(eq("The Beatles"))
   end
+  it("alphebetizes the list of bands") do
+    band1 = Band.create({:name => "Janis Joplin"})
+    band2 = Band.create({:name => "Beatles"})
+    expect(Band.alphabetical()).to(eq([venue2, venue1]))
+  end
 end
