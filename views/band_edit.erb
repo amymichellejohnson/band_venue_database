@@ -1,0 +1,13 @@
+<h2><%= @band.name() %>'s Page</h2>
+<form action = "/bands/<%= @band.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-danger btn-sm">Delete name</button>
+</form>
+<br>
+<form action = "/bands/<%= @band.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label id ="name">Rename here:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-danger btn-sm">Submit</button>
+</form>
+<a href="/">Return to Main page</a>

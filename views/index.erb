@@ -1,0 +1,39 @@
+<h1>Welcome to the Band and Venue Database</h1>
+<h3>Add a Band or Venue below</h3>
+<br>
+<h3>Add a band:</h3>
+<form action="/bands" method ="post">
+  <label id="name">Name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<% if @bands.any?() %>
+  <p>Click on a band to <b>see/add</b> venues played or to <b>edit</b> band's name:</p>
+  <% @bands.each() do |band| %>
+    <ul>
+      <li><a href="bands/<%= band.id() %>"><%=band.name()%></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no bands in the database yet!</p>
+<% end %>
+
+<br>
+
+<h3>Add a venue:</h3>
+<form action="/venues" method ="post">
+  <label id="name">Name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<% if @venues.any?() %>
+<% @venues.each() do |venue| %>
+<ul>
+  <li><%=venue.name()%> <a href="/venues/delete/<%= venue.id() %>"><button type="submit" class="btn btn-xs btn-danger">Delete</button></a></li>
+</ul>
+<% end %>
+<% else %>
+<p>There are no venues in the database yet!</p>
+<% end %>
